@@ -24,7 +24,7 @@ jobs:
           committer_token: ${{ secrets.GITHUB_TOKEN }}
           user: ${{ github.repository_owner }}
           filename: metrics.languages.svg
-          base: "repositories"
+          base: ""
           config_timezone: America/Los_Angeles
 
           plugin_languages: yes
