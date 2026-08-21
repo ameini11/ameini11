@@ -25,7 +25,7 @@ jobs:
           user: ${{ github.repository_owner }}
           filename: metrics.languages.svg
           # Empty base = render only the languages plugin, no default header card.
-          base: ""
+          base: "repositories"   # TEMP diagnostic: show how many repos metrics sees
           config_timezone: America/Los_Angeles
 
           plugin_languages: yes
