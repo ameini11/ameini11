@@ -24,8 +24,7 @@ jobs:
           committer_token: ${{ secrets.GITHUB_TOKEN }}
           user: ${{ github.repository_owner }}
           filename: metrics.languages.svg
-          # Empty base = render only the languages plugin, no default header card.
-          base: "repositories"   # TEMP diagnostic: show how many repos metrics sees
+          base: "repositories"
           config_timezone: America/Los_Angeles
 
           plugin_languages: yes
@@ -34,14 +33,6 @@ jobs:
           plugin_languages_details: bytes-size, percentage
           plugin_languages_colors: github
 
-          # Indepth attributes code to whoever actually committed it, by cloning
-          # each repo and running linguist over your commits. Without it a fork
-          # would credit you with the whole upstream codebase.
-          plugin_languages_indepth: no   # TEMP: bisecting the "0 languages" result
-          plugin_languages_analysis_timeout: 15
-          plugin_languages_analysis_timeout_repositories: 7.5
-
-          # Reach beyond public, owned, non-fork repos - which is the default.
-          repositories_affiliations: owner, collaborator, organization_member
+          # Nearly all of this account's code lives in forks, which metrics
+          # excludes by default.
           repositories_forks: yes
-          repositories: 200
