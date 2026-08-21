@@ -37,7 +37,7 @@ jobs:
           # Indepth attributes code to whoever actually committed it, by cloning
           # each repo and running linguist over your commits. Without it a fork
           # would credit you with the whole upstream codebase.
-          plugin_languages_indepth: yes
+          plugin_languages_indepth: no   # TEMP: bisecting the "0 languages" result
           plugin_languages_analysis_timeout: 15
           plugin_languages_analysis_timeout_repositories: 7.5
 
